@@ -1,0 +1,53 @@
+.login-form {
+    width: 100%;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 5%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 5%;
+    color: #333;
+}
+
+.interaction-group {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 2%;
+    font-size: 1em;  /* 상대 단위를 사용하여 반응형 폰트 크기 */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    background-color: #28a745;
+}
+
+.register-button:hover {
+    background-color: #218838;
+}
+
+.register-button:disabled {
+    background-color: #b0e0a6;
+    cursor: not-allowed;
+}
+
+.validerror-message {
+    color: red;
+    font-size: 0.75em;
+    min-height: 1.75em;
+}
