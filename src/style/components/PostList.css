@@ -1,7 +1,7 @@
 .post-list {
-    width: 600px;
+    width: 55vh;
     font-family: 'Arial', sans-serif;
-    background-color: #FAFFF4; /* 부드러운 메론색 배경 */
+    background-color: #FAFFF4;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -9,7 +9,7 @@
 
 h1 {
     text-align: center;
-    color: #A8E6CF; /* 파스텔 메론색 텍스트 */
+    color: #A8E6CF;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -20,8 +20,8 @@ ul {
 }
 
 .post-item {
-    background-color: #DCECC9; /* 밝은 메론색 배경 */
-    border: 1px solid #B8D8BA; /* 부드러운 테두리 색상 */
+    background-color: #DCECC9;
+    border: 1px solid #B8D8BA;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -38,13 +38,13 @@ ul {
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    color: #76C7A7; /* 어두운 메론색 텍스트 */
+    color: #76C7A7;
     margin-bottom: 10px;
 }
 
 .post-date {
     font-size: 12px;
-    color: #A8E6CF; /* 파스텔 메론색 날짜 */
+    color: #A8E6CF;
 }
 
 .post-content {

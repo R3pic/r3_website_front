@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/components/SideBar.css';
+import { UserDTO } from '../model/UserDTO';
 
 const SideBar: React.FC = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState({ name: 'Charlie', id: "ABC123" }); // 임시 사용자 정보
+    
+    const [user, setUser] = useState<UserDTO>({ id: '', name: '', introduction: '' });
 
     useEffect(() => {
         // TODO: 나중에 백엔드와 연결하여 사용자 정보를 가져올 수 있도록 합니다.
         // 예: setUser(fetchUserDataFromBackend());
+
+        // 초기 사용자 정보 설정
+        setUser({ id: 'user123', name: '사용자', introduction: '안녕하세요!' });
     }, []);
 
     return (
@@ -22,7 +27,6 @@ const SideBar: React.FC = () => {
 
             <div className="side-bar-footer">
                 <strong>닉네임 표시 : {user.name} <br/>아이디 표시 : {user.id}</strong>
-                
             </div>
         </div>
     );
