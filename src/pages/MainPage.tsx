@@ -1,15 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import SideBar from "../components/SideBar.tsx";
+import PostList from "../components/PostList.tsx";
+import "../style/pages/MainPage.css";
 
 const MainPage: React.FC = () => {
-    const navigate = useNavigate();
-    const GotoLoginPage = () => {
-        navigate('/login');
-    }
     return (
-        <div>
-            <h1>Main Page</h1>
-            <button type="button" onClick={GotoLoginPage}>로그인</button>
+        <div className="main-page">
+            <div className="wrapper">
+                <SideBar />
+                <PostList />
+            </div>
         </div>
     );
 }
