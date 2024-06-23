@@ -6,6 +6,7 @@ import Search from './pages/Search.tsx';
 import Notifications from './pages/Notifications.tsx';
 import Profile from './pages/Profile.tsx';
 import Settings from './pages/Settings.tsx';
+import PostDetail from './components/PostDetail.tsx';
 
 const App: React.FC = () => {
     return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
                     <Route path="notifications" element={<Notifications />} />
                     <Route path="profile" element={<Profile />} />
                     <Route path="settings" element={<Settings />} />
+                    <Route path=":author/post/:id" element={<PostDetail />} />
                 </Route>
             </Routes>
         </Router>

@@ -7,9 +7,9 @@ body {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
+    gap: 10px;
 }
 
-.wrapper {
-    display: flex;
-    gap: 5px;
+.content {
+    width: 55vh;
 }

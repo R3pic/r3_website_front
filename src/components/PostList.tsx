@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import PostCard from './PostCard.tsx';
+
 import '../style/components/PostList.css';
 
 const mock_posts: PostDTO[] = [
-    { id: 1, content: '안녕하세요!', author: 'Alice', createdAt: new Date() },
-    { id: 2, content: 'Hi, there!', author: 'Bob', createdAt: new Date() },
-    { id: 3, content: 'Good morning!', author: 'Charlie', createdAt: new Date() },
-    { id: 4, content: 'Good afternoon!', author: 'David',
-        createdAt: new Date(new Date().setHours(new Date().getHours() - 1)) },
-    { id: 5, content: 'Good evening!', author: 'Eve', createdAt: new Date() },
-    { id: 6, content: 'Good night!', author: 'Frank', createdAt: new Date() },
-    { id: 7, content: 'Goodbye!', author: 'Grace', createdAt: new Date() },
-    { id: 8, content: 'See you later!', author: 'Hank', createdAt: new Date() },
-    { id: 9, content: 'See you tomorrow!', author: 'Ivy', createdAt: new Date() },
-    { id: 10, content: 'See you soon!', author: 'Jack', createdAt: new Date() },
-    { id: 11, content: 'See you!', author: 'Kate', createdAt: new Date() },
-    { id: 12, content: 'Good luck!', author: 'Leo', createdAt: new Date() },
-    { id: 13, content: 'Take care!', author: 'Mike', createdAt: new Date() },
-];
+    {
+        id: 1, content: 'Hello, World!', author: 'Alice', createdAt: new Date(), like: false, likesCount: 0, bookmark: false, bookmarkCount: 0,
+    },
+    {
+        id: 2, content: 'Hello, World! 긴 텍스트를 시험해봅니다. 100글자가 이상이 넘어야만 ...으로 줄여질텐데 현재 몇글자인지 감이안잡히므로 동해물과 백두산이 마르고 닳도록 ㅇㅇㅇㅇㅇ아아아아직도?', author: 'Bob', createdAt: new Date(), like: false, likesCount: 0,  bookmark: false, bookmarkCount: 0,
+    },
+    {
+        id: 3, content: 'Hello, World!', author: 'Charlie', createdAt: new Date(), like: false, likesCount: 0, bookmark: false, bookmarkCount: 0,
+    }
+]
 
 const PostList: React.FC = () => {
     const [posts, setPosts] = useState<PostDTO[]>([]);
@@ -29,11 +26,8 @@ const PostList: React.FC = () => {
         <main>
             <ul className='post-list'>
                 {posts.map(post => (
-                    <li key={post.id} className="post-item">
-                        <div className="post-author">
-                            <strong>{post.author}</strong> <span className="post-date">{post.createdAt.toLocaleString()}</span>
-                        </div>
-                        <p className="post-content">{post.content}</p>
+                    <li key={post.id}>
+                        <PostCard {...post}/>
                     </li>
                 ))}
             </ul>
