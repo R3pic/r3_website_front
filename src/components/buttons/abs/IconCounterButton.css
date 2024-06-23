@@ -10,6 +10,7 @@ button {
     gap: 5px;
     position: relative;
     transition: color 0.3s;
+    z-index: 0;
 }
 
 .icon-counter-button:hover .button-icon {
