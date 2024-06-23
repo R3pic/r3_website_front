@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import '../style/components/PostCard.css';
-import LikeButton from "./LikeButton";
-import BookmarkButton from "./BookmarkButton";
+import './PostCard.css';
+import LikeButton from "../buttons/LikeButton";
+import BookmarkButton from "../buttons/BookmarkButton";
 
 const PostCard: React.FC<PostDTO> = ({ id, content, author, createdAt, like, likesCount, bookmark, bookmarkCount }) => {
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ const PostCard: React.FC<PostDTO> = ({ id, content, author, createdAt, like, lik
             <div className="post-author">
                 <strong>{author}</strong> <span className="post-date">{createdAt.toLocaleString()}</span>
             </div>
-            <p className="post-content" onClick={showDetail}>{ShortContent()}</p>
+            <p className="post-content">{ShortContent()}</p>
             <div className="post-interactions">
                 <LikeButton initialLike={like} initialLikesCount={likesCount} />
                 <BookmarkButton initialBookmark={bookmark} initialBookmarkCount={bookmarkCount} />

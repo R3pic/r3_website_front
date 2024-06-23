@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../style/components/SideBar.css';
-import { UserDTO } from '../model/UserDTO';
+import './SideBar.css';
+import { UserDTO } from '../../models/UserDTO';
 
 const SideBar: React.FC = () => {
     const navigate = useNavigate();

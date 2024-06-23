@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IconType } from 'react-icons';
-import '../style/components/IconCounterButton.css';
+import './IconCounterButton.css';
 
 interface IconCounterButtonProps {
     initialActive: boolean;
@@ -29,18 +29,16 @@ const IconCounterButton: React.FC<IconCounterButtonProps> = ({
     };
 
     return (
-        <div className="post-interaction">
-            <span
-                className="icon-counter-button"
-                onClick={handleButtonClick}
-                style={{ '--active-color': activeColor, '--hover-color': hoverColor } as React.CSSProperties}
-            >
-                <span className="button-icon">
-                    {active ? <ActiveIcon color={activeColor} /> : <InactiveIcon />}
-                </span>
-                <span className="button-count">{count}</span>
+        <button
+            className="icon-counter-button"
+            onClick={handleButtonClick}
+            style={{ '--active-color': activeColor, '--hover-color': hoverColor } as React.CSSProperties}
+        >
+            <span className="button-icon">
+                {active ? <ActiveIcon color={activeColor} /> : <InactiveIcon />}
             </span>
-        </div>
+            <span className="button-count">{count}</span>
+        </button>
     );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import IconCounterButton from './IconCounterButton';
+import IconCounterButton from './abs/IconCounterButton';
 
 const LikeButton: React.FC<{ initialLike: boolean, initialLikesCount: number }> = ({ initialLike, initialLikesCount }) => (
     <IconCounterButton

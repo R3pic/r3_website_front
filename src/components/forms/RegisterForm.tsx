@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import UserInput from "../components/UserInput";
-import '../style/components/RegisterForm.css';
+import UserInput from "../userinputs/UserInput";
+import './RegisterForm.css';
 
 const RegisterForm: React.FC = () => {
     const navigate = useNavigate();

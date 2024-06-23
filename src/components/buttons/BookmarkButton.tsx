@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBookmark, FaRegBookmark } from 'react-icons/fa';
-import IconCounterButton from './IconCounterButton';
+import IconCounterButton from './abs/IconCounterButton';
 
 const BookmarkButton: React.FC<{ initialBookmark: boolean, initialBookmarkCount: number }> = ({ initialBookmark, initialBookmarkCount }) => (
     <IconCounterButton

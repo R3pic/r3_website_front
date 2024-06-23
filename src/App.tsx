@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './components/Layout.tsx';
+import Layout from './components/layout/Layout.tsx';
 import Home from './pages/Home.tsx';
 import Search from './pages/Search.tsx';
 import Notifications from './pages/Notifications.tsx';
 import Profile from './pages/Profile.tsx';
 import Settings from './pages/Settings.tsx';
-import PostDetail from './components/PostDetail.tsx';
+import PostDetail from './components/posts/PostDetail.tsx';
 
 const App: React.FC = () => {
     return (

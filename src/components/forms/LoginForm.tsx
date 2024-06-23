@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import UserInput from "../components/UserInput";  // UserInput 컴포넌트 임포트
-import '../style/components/LoginForm.css';  // 스타일시트 임포트
+import UserInput from "../userinputs/UserInput";  // UserInput 컴포넌트 임포트
+import './LoginForm.css';  // 스타일시트 임포트
 import { useNavigate } from "react-router-dom";
 
 const LoginForm: React.FC = () => {
