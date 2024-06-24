@@ -7,12 +7,10 @@ import axios from 'axios';
 const PostList: React.FC = () => {
     const [posts, setPosts] = useState<PostDTO[]>([]);
 
-    
-
     useEffect(() => {
         const getRecentPosts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/post/recent');
+                const response = await axios.get('api/post/recent');
                 console.log(response.data);
                 setPosts(response.data);
             } catch (error) {
