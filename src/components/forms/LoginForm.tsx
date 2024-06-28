@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import UserInput from "../userinputs/UserInput";  // UserInput 컴포넌트 임포트
-import './LoginForm.css';  // 스타일시트 임포트
+import UserInput from "../userinputs/UserInput";
+import './LoginForm.css';
 import { useNavigate } from "react-router-dom";
 
 const LoginForm: React.FC = () => {
@@ -21,7 +21,6 @@ const LoginForm: React.FC = () => {
     const loginHandle = () => {
         console.log(`id: ${id}, password: ${password}`);
         // 나중에 백엔드와 연동하여 로그인 처리
-
         // 로그인 성공 시
         navigate('/');
     }

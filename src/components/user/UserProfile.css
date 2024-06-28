@@ -1,0 +1,40 @@
+/* src/style/components/UserProfile.css */
+.user-profile {
+    display: flex;
+    align-items: center;
+    background-color: #DCECC9;
+    border: 1px solid #B8D8BA;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #B8D8BA;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #4E342E;
+    cursor: pointer;
+}
+
+.user-name:hover {
+    text-decoration: underline;
+}
+
+.user-id {
+    font-size: 14px;
+    color: #76C7A7;
+}

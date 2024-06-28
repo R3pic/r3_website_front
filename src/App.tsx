@@ -17,9 +17,9 @@ const App: React.FC = () => {
                     <Route path="home" element={<Home />} />
                     <Route path="search" element={<Search />} />
                     <Route path="notifications" element={<Notifications />} />
-                    <Route path="profile" element={<Profile />} />
                     <Route path="settings" element={<Settings />} />
                     <Route path=":author/post/:id" element={<PostDetail />} />
+                    <Route path=":id" element={<Profile />} />
                 </Route>
             </Routes>
         </Router>
