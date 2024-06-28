@@ -12,12 +12,12 @@ const SideBar: React.FC = () => {
     useEffect(() => {
         // TODO: 나중에 백엔드와 연결하여 사용자 정보를 가져올 수 있도록
         // 예: setUser(fetchUserDataFromBackend());
-        setUser({ id: 'user123', name: '사용자', introduction: '안녕하세요!' });
+        setUser({ id: 'user123', name: '사용자이름', introduction: '안녕하세요!' });
     }, []);
 
     return (
         <div className="side-bar">
-            <img src="/icon.svg" alt="Logo" className="logo" />
+            <img src="/icon.svg" alt="Logo" className="logo" onClick={() => navigate('/home')}/>
             <button onClick={() => navigate('/home')}>홈</button>
             <button onClick={() => navigate('/search')}>검색</button>
             <button onClick={() => navigate('/notifications')}>알림</button>
@@ -26,7 +26,7 @@ const SideBar: React.FC = () => {
 
             <div className="side-bar-footer">
                 <UserProfile
-                    profilePicture="public/Profile.webp"
+                    profilePicture="/Profile.webp"
                     name={user.name}
                     id={user.id}
                 />
