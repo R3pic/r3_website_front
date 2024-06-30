@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import UserInput from "../userinputs/UserInput";
 import './RegisterForm.css';
@@ -10,6 +11,7 @@ const RegisterForm: React.FC = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
+    const [nickname, setNickname] = useState('');
     const [registerable, setRegisterable] = useState(false);
 
     const [idError, setIdError] = useState('');
@@ -70,15 +72,27 @@ const RegisterForm: React.FC = () => {
         );
     }, [id, password, repeatPassword]);
 
-    const registerHandle = () => {
+    const registerHandle = async () => {
         if (!registerable) return;
 
         console.log(`id: ${id}, password: ${password}로 회원가입 시도.`);
-        // 나중에 백엔드와 연동하여 회원가입 처리
-        // 회원가입 성공시 성공했다고 알려주고 3초뒤에 로그인 페이지로 이동
+        const response = await axios.post('api/auth/signup', {
+            user_id: id,
+            password,
+            nickname,
+        });
+
+        console.log(response);
+
+        if (response.status !== 201) {
+            console.error('회원가입에 실패했습니다.');
+            return;
+        }
+
+        console.log('회원가입에 성공했습니다. 로그인 페이지로 이동합니다.');
         setTimeout(() => {
             navigate('/login');
-        }, 3000);
+        }, 1000);
     };
 
     return (
@@ -95,6 +109,16 @@ const RegisterForm: React.FC = () => {
                     onChange={(e) => setId(e.target.value)}
                 />
                 <p className="validerror-message">{idError || ' '}</p>
+
+                <UserInput
+                    id="nickname"
+                    label="닉네임"
+                    type="text"
+                    placeholder="닉네임을 입력하세요 (선택사항)"
+                    value={nickname}
+                    onChange={(e) => setNickname(e.target.value)}
+                />
+
                 <UserInput
                     id="password"
                     label="비밀번호"

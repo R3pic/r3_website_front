@@ -2,7 +2,7 @@
     justify-content: center;  /* 수평 중앙 정렬 */
     align-items: center;  /* 수직 중앙 정렬 */
     height: 100vh;  /* 뷰포트의 전체 높이를 사용 */
-    background-color: #f0f0f0;  /* 배경색은 원하는 대로 설정 */
+    background-color: #DCE2C9;  /* 배경색 지정 */
     padding: 100px;  /* 필요에 따라 패딩 추가 */
     box-sizing: border-box;  /* 패딩과 경계선 크기를 요소 크기에 포함 */
 }

@@ -3,30 +3,33 @@
     min-width: 300px;
     max-width: 400px;
     margin: 0 auto;
-    padding: 5%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #B8D8BA;
+    border-radius: 10px;
+    background-color: #DCECC9;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.login-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .login-title {
     text-align: center;
-    margin-bottom: 5%;
-    color: #333;
+    margin-bottom: 20px;
+    color: #4E342E;
+    font-size: 1.5em;
 }
 
 .interaction-group {
-    margin-right: 10%;
-    margin-left: 10%;
-}
-
-.checkbox-group {
-    margin-bottom: 2%;
-}
-
-.checkbox-group label {
-    font-weight: normal;
-    font-size: 0.9em;
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
 }
 
 .button-group {
@@ -38,31 +41,33 @@
 .login-button,
 .register-button {
     width: 100%;
-    padding: 2%;
-    font-size: 1em;  /* 상대 단위를 사용하여 반응형 폰트 크기 */
+    padding: 10px;
+    font-size: 1em;
     border: none;
     border-radius: 4px;
+    align-self: center;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .login-button {
-    background-color: #007bff;
+    background-color: #76C7A7;
 }
 
 .login-button:hover {
-    background-color: #0056b3;
+    background-color: #4E8A7E;
 }
 
 .login-button:disabled {
-    background-color: #b0c5e8;
+    background-color: #B8D8BA;
     cursor: not-allowed;
 }
 
 .register-button {
-    background-color: #28a745;
+    background-color: #3ACE99;
 }
 
 .register-button:hover {
-    background-color: #218838;
+    background-color: #4E8E7E;
 }

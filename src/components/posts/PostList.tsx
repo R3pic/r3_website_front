@@ -4,13 +4,17 @@ import PostCard from './PostCard.tsx';
 import './PostList.css';
 import axios from 'axios';
 
-const PostList: React.FC = () => {
+interface PostListProps {
+    target: string;
+}
+
+const PostList: React.FC<PostListProps> = ({ target }) => {
     const [posts, setPosts] = useState<PostDTO[]>([]);
 
     useEffect(() => {
         const getRecentPosts = async () => {
             try {
-                const response = await axios.get('api/post/recent');
+                const response = await axios.get(`api/post/${target}`);
                 console.log(response.data);
                 setPosts(response.data);
             } catch (error) {
@@ -24,7 +28,7 @@ const PostList: React.FC = () => {
     return (
         <ul className='post-list'>
             {posts.map(post => (
-                <li key={post.id}>
+                <li key={post.postId}>
                     <PostCard {...post}/>
                 </li>
             ))}

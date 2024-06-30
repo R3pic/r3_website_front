@@ -4,7 +4,7 @@ import PostList from "../components/posts/PostList";
 const Home: React.FC = () => {
     return (
         <div>
-            <PostList />
+            <PostList target="recent"/>
         </div>
     );
 }

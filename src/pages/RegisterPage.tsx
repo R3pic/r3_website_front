@@ -1,6 +1,6 @@
 import React from "react";
 import RegisterForm from "../components/forms/RegisterForm";
-import "../style/pages/RegisterPage.css";
+import './RegisterPage.css';
 
 const RegisterPage: React.FC = () => {
     return (

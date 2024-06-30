@@ -1,5 +1,5 @@
 import React from "react";
-import "./components/UserInput.css";
+import './UserInput.css';
 
 interface UserInputProps {
     id: string;

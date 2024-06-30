@@ -4,11 +4,11 @@ import './PostCard.css';
 import LikeButton from "../buttons/LikeButton";
 import BookmarkButton from "../buttons/BookmarkButton";
 
-const PostCard: React.FC<PostDTO> = ({ id, content, author, createdAt, like, likesCount, bookmark, bookmarkCount }) => {
+const PostCard: React.FC<PostDTO> = ({ postId, content, authorId, nickname, createdAt, like, likesCount, bookmark, bookmarkCount }) => {
     const navigate = useNavigate();
 
     const showDetail = () => {
-        navigate(`/${author}/post/${id}`, { state: { id, content, author, createdAt, like, likesCount, bookmark, bookmarkCount } });
+        navigate(`/${authorId}/post/${postId}`, { state: { postId, content, authorId, nickname, createdAt, like, likesCount, bookmark, bookmarkCount } });
     }
 
     const ShortContent = () => {
@@ -19,9 +19,9 @@ const PostCard: React.FC<PostDTO> = ({ id, content, author, createdAt, like, lik
     }
 
     return (
-        <article key={id} className="post-card" onClick={showDetail}>
+        <article key={postId} className="post-card" onClick={showDetail}>
             <div className="post-author">
-                <strong>{author}</strong> <span className="post-date">{new Date(createdAt).toLocaleString()}</span>
+                <strong>{nickname ? nickname : authorId}</strong> <span className="post-date">{new Date(createdAt).toLocaleString()}</span>
             </div>
             <p className="post-content">{ShortContent()}</p>
             <div className="post-interactions">

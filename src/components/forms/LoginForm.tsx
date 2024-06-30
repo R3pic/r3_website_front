@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import UserInput from "../userinputs/UserInput";
 import './LoginForm.css';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const LoginForm: React.FC = () => {
+interface LoginFormProps {
+    setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({ setIsLogin }) => {
     const navigate = useNavigate();
 
     const [id, setId] = useState('');
@@ -18,10 +23,22 @@ const LoginForm: React.FC = () => {
         }
     }, [id, password]);
 
-    const loginHandle = () => {
+    const loginHandle = async () => {
         console.log(`id: ${id}, password: ${password}`);
-        // 나중에 백엔드와 연동하여 로그인 처리
-        // 로그인 성공 시
+        
+        const response = await axios.post('api/auth/login', {
+            user_id: id,
+            password: password
+        });
+        
+        console.log(response.data);
+
+        if (response.status !== 200) {
+            alert('로그인에 실패했습니다.');
+            return;
+        }
+
+        setIsLogin(true);
         navigate('/');
     }
 
@@ -33,7 +50,6 @@ const LoginForm: React.FC = () => {
     return (
         <div className="login-form">
             <h1 className="login-title">PG 로그인</h1>
-
             <div className="interaction-group">
                 <UserInput
                     id="id"

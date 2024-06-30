@@ -9,9 +9,10 @@
 }
 
 .form-input {
+    background-color: #EEECCE;
     width: 100%;
     padding: 2%;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #B8D8BA;
     border-radius: 4px;
 }

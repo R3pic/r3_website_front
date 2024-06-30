@@ -1,11 +1,15 @@
 import React from "react";
 import LoginForm from "../components/forms/LoginForm.tsx";
-import "../style/pages/LoginPage.css";
+import './LoginPage.css';
 
-const LoginPage: React.FC = () => {
+interface LoginPageProps {
+    setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const LoginPage: React.FC<LoginPageProps> = ({ setIsLogin }) => {
     return (
         <div className="login-page">
-            <LoginForm />
+            <LoginForm setIsLogin={setIsLogin}/>
         </div>
     );
 }

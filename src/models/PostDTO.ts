@@ -1,7 +1,8 @@
 interface PostDTO {
-    id: number;
+    postId: number;
     content: string;
-    author: string;
+    authorId: string;
+    nickname: string;
 
     like: boolean;
     likesCount: number;

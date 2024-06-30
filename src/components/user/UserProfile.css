@@ -38,3 +38,12 @@
     font-size: 14px;
     color: #76C7A7;
 }
+
+.profile-login-button {
+    background-color: #76C7A7;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 50px;
+    cursor: pointer;
+}
